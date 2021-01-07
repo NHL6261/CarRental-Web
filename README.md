@@ -1,4 +1,4 @@
-# carrental
+# carrental-web
 
 ## Project setup
 ```

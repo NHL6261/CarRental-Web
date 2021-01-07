@@ -1,0 +1,26 @@
+$color-main: #34393f;
+
+/* clearfix 清浮动*/
+
+// 如果是 @mixin 定义的混合,那就用 @include 去在页面上引用 例如: @include clearfix
+// 如果是 %clearfix 定义的混合,那就用 @extend 去在页面上引用 例如:  @extend %clearfix
+%clearfix {
+    // @mixin clearfix {
+    &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+    }
+    *height: 1%;
+}
+
+@mixin webkit($type, $value) {
+    -webkit-#{$type}: $value;
+    -moz-#{$type}: $value;
+    -o-#{$type}: $value;
+    -ms-#{$type}: $value;
+    #{$type}: $value;
+}
