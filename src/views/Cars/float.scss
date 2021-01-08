@@ -6,36 +6,6 @@
     z-index: 11;
 }
 
-.car-item {
-    width: 505px;
-    height: 257px;
-    padding: 30px;
-    margin: auto;
-    border-radius: 24px;
-    background-color: #fff;
-    @include webkit(box-shadow, 0 0 18px 0 rgba(0, 0, 0, 0.2));
-    @include webkit(box-sizing, border-box);
-    header {
-        @extend %clearfix
-    }
-}
-
-.cars-logo {
-    float: left;
-    img {
-        // 因为是块，所以要转换成行内块
-        display: inline-block;
-        height: 34px;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-    .name {
-        font-size: 16px;
-    }
-}
-
-.attr {
-    float: right;
-    opacity: .5;
-    line-height: 24px;
+.cars-swiper-wrap {
+    padding: 0 40px;
 }

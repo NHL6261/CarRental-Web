@@ -1,25 +1,49 @@
 <template>
   <div id="cars-wrap">
-    <section class="car-item">
-      <header>
-        <h4 class="cars-logo">
-          <img src="../../assets/images/cars-logo.png" alt="Mustang 2019款">
-          <span class="name">Mustang 2019款</span>
-        </h4>
-        <p class="attr ">新能源汽车 5座</p>
-      </header>
-      <div></div>
-      <footer></footer>
-    </section>
+    <div class="cars-swiper-wrap">
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide>
+          <CarsItem></CarsItem>
+        </swiper-slide>
+        <swiper-slide>
+          <CarsItem></CarsItem>
+        </swiper-slide>
+        <swiper-slide>
+          <CarsItem></CarsItem>
+        </swiper-slide>
+        <swiper-slide>
+          <CarsItem></CarsItem>
+        </swiper-slide>
+        <swiper-slide>
+          <CarsItem></CarsItem>
+        </swiper-slide>
+      </swiper>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
+    </div>
     <p @click="testHandle('/members')">车辆渲染</p>
   </div>
 </template>
 
 <script>
+import CarsItem from "@c/carList/index.vue";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
 export default {
   name: "Cars-Index",
+  components: { Swiper, SwiperSlide, CarsItem },
   data() {
-    return {};
+    return {
+      swiperOption: {
+        slidesPerView: 3,
+        spaceBetween: 100,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+    };
   },
   methods: {
     testHandle(path) {
@@ -31,6 +55,5 @@ export default {
 
 <style lang="scss" scoped>
 // @import './flex.scss'
-@import './float.scss'
-
+@import "./float.scss";
 </style>

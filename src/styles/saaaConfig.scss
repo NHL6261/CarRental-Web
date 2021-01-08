@@ -17,10 +17,25 @@ $color-main: #34393f;
     *height: 1%;
 }
 
+
+/* webkit 在前的情况(作为属性名)*/
+
 @mixin webkit($type, $value) {
     -webkit-#{$type}: $value;
     -moz-#{$type}: $value;
     -o-#{$type}: $value;
     -ms-#{$type}: $value;
+    #{$type}: $value;
+}
+
+
+/* webkit作为属性值的时候 */
+
+@mixin webkitA($type, $value) {
+    // A 相当于 after属性
+    #{$type}: -webkit-#{$value};
+    #{$type}: -moz-#{$value};
+    #{$type}: -o-#{$value};
+    #{$type}: -ms-#{$value};
     #{$type}: $value;
 }
