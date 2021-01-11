@@ -50,6 +50,13 @@ export default {
       path !== this.$route.path && this.$router.push(path);
     },
   },
+  watch:{
+    'id':{
+      handler(newValu){
+        console.log(newValu)
+      }
+    }
+  }
 };
 </script>
 
